@@ -1,0 +1,23 @@
+<div class="border p-5 m-5 col-md-6">
+  <div>
+    <h3 class="text-success text-center" style="font-weight: bold;">Edit Post</h3>
+    <hr />
+  </div>
+  
+  <div>
+    <form [formGroup]="editPostForm" (ngSubmit)="onEditPost()">
+      <div class="mb-3">
+        <label class="text-secondary">Title</label>
+        <input type="text" class="form-control" formControlName="title" />
+      </div>
+      <div class="mb-3">
+        <label class="text-secondary">Description</label>
+        <textarea class="form-control" formControlName="description"></textarea>
+      </div>
+  
+      <div>
+        <button type="submit" class="btn btn-info text-light">Update Post</button>
+      </div>
+    </form>
+  </div>
+</div>

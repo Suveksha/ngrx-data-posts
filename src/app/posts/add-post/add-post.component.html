@@ -1,0 +1,24 @@
+<div class="border mt-5 col-md-6 p-5">
+  <div>
+    <h3 class="text-warning text-center" style="font-weight:bold;">Add Post</h3>
+    <hr />
+  </div>
+  
+  <div>
+    <form [formGroup]="addPostForm" (ngSubmit)="onAddPost()">
+      <div class="mb-3">
+        <label class="text-secondary">Title</label>
+        <input type="text" class="form-control" formControlName="title" />
+      </div>
+      <div class="mb-3">
+        <label class="text-secondary">Description</label>
+        <textarea class="form-control" formControlName="description"></textarea>
+      </div>
+  
+      <div>
+        <button type="submit" class="btn btn-success">Add Post</button>
+      </div>
+    </form>
+  </div>
+  
+</div>

@@ -1,0 +1,30 @@
+<div>
+  <h3 class="text-warning mt-5" style="font-weight:bold; text-align: center; font-size:2.5rem;">Posts List</h3>
+</div>
+
+<div>
+  <button class="btn btn-success mt-3 mb-3" [routerLink]="['/posts', 'add']">Add Post</button>
+</div>
+<table class="table table-striped text-center" >
+  <thead class="bg-info" style="color:white;">
+    <tr>
+      <th>Id</th>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let post of posts$ | async">
+      <td>{{ post.id }}</td>
+      <td>{{ post.title }}</td>
+      <td>{{ post.description }}</td>
+      <td>
+        <button class="btn btn-warning" [routerLink]="['/posts', 'edit', post.id]">Edit Post</button>&nbsp;
+        <button class="btn btn-danger" (click)="onDeletePost($event, post.id)">Delete Post</button>&nbsp;
+        <button class="btn btn-info" [routerLink]="['/posts', 'details', post.id]">View Details</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
